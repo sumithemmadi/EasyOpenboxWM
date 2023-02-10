@@ -1,0 +1,41 @@
+#!/bin/bash
+
+STYLE="default"
+
+rofi_command="rofi -theme $STYLE/screenshot.rasi"
+
+# Data
+_perc=$(cat /sys/class/power_supply/BAT1/capacity 2>/dev/null )
+_stts=$(cat /sys/class/power_supply/BAT1/status  2>/dev/null )
+_temp=$(acpi -t 2>/dev/null)
+_health=$( cat /sys/class/power_supply/BAT1/capacity_level 2>/dev/null)
+
+# Options
+perc=" Current : ${_perc}%"
+if [[ "$_stts" == "DISCHARGING" ]]; then
+	stts=" Status : ${_stts}"
+else
+	stts=" Status : ${_stts}"	
+fi
+temp=" Temperature : ${_temp%.*}°C"
+health=" Health : ${_health}"
+
+# Variable passed to rofi
+options="$perc\n$stts\n$temp\n$health"
+
+chosen="$(echo -e "$options" | $rofi_command -p 'Battery Status' -dmenu -selected-row 0)"
+case $chosen in
+    $perc)
+		echo
+        ;;
+    $stts)
+		echo
+        ;;
+    $temp)
+		echo
+        ;;
+    $health)
+		echo
+        ;;
+esac
+

@@ -89,7 +89,7 @@ cd EasyOpenboxWM
 
 ## Initialize And Start Openbox
 
-This method is to initialize and start Awesome without a Display Manager like lightdm
+This method is to initialize and start openbox without a Display Manager like lightdm
 
 Add openbox to the `.xinitrc` file:
 
@@ -149,7 +149,7 @@ sudo pacman -S --needed base-devel
 2. Git clone Paru repository using command:
 
 ```bash
-git clone https://aur.archlinux.org/paru.git
+git clone https://aur.archlinux.org/paru-bin.git
 ```
 
 This command will download the contents of the Paru GitHub repository in a local directory named paru.
@@ -157,13 +157,13 @@ This command will download the contents of the Paru GitHub repository in a local
 3. Change into the paru directory:
 
 ```bash
-cd paru
+cd paru-bin
 ```
 
 4. Finally, build and install Paru AUR helper in Arch Linux using the following command:
 
 ```bash
-makepkg -si
+makepkg -sri
 ```
 
 You can use `paru` for install packages from [AUR](https://aur.archlinux.org/paru.git)

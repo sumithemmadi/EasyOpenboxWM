@@ -9,6 +9,7 @@ It is a simple script that will install Openbox Window Manager.
 ## How to install (Automatic)
 
 --Experimental--
+
 This is only for arch linux distro's
 
 ```bash

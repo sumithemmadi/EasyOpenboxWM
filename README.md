@@ -32,7 +32,8 @@ tigervnc vim wget xarchiver xbitmaps xcompmgr xfce4-settings xfce4-terminal \
 xmlstarlet xorg-font-util xorg-xrdb zsh
 ``` -->
 
-<!-- For Fedora:
+<!-- 
+For Fedora:
 
 sudo dnf install openbox obconf
 
@@ -42,66 +43,66 @@ sudo zypper install openbox obconf
 
 For Arch Linux, use the following:
 
-sudo pacman -S xorg-xdm openbox xorg obconf -->
+sudo pacman -S xorg-xdm openbox xorg obconf
+ -->
 
 - Install required dependencies
 
-```bash
-sudo pacman -S  xorg xorg-font-util xorg-xrdb xorg-xdm  xorg-server xorg-xinit sxhkd \
-xfce4-settings xfce4-terminal polybar ranger rofi startup-notification thunar   \
-openbox   obconf xarchiver dbus desktop-file-utils elinks gtk2 gtk3 man flameshot \
-zsh git  vim nano curl wget jq xarchiver firefox imagemagick geany alacritty gedit \
-bc bmon calc calcurse feh htop scrot mpc mpd mutt ncmpcpp neofetch  openssl leafpad \
-xmlstarlet xbitmaps ranger  xcompmgr nitrogen brightnessctl alsa-utils imv maim mpv 
-```
+  ```bash
+  sudo pacman -S  xorg xorg-font-util xorg-xrdb xorg-xdm  xorg-server xorg-xinit sxhkd \
+  xfce4-settings xfce4-terminal polybar ranger rofi startup-notification thunar   \
+  openbox   obconf xarchiver dbus desktop-file-utils elinks gtk2 gtk3 man flameshot \
+  zsh git  vim nano curl wget jq xarchiver firefox imagemagick geany alacritty gedit \
+  bc bmon calc calcurse feh htop scrot mpc mpd mutt ncmpcpp neofetch  openssl leafpad \
+  xmlstarlet xbitmaps ranger  xcompmgr nitrogen brightnessctl alsa-utils imv maim mpv 
+  ```
 
 >Note: I'm using Arch Linux for this tutorial. However, the below commands and steps will be same for other arch linux distros.
 
 - Clone this repository
 
-```bash
-cd ~/
-git clone https://github.com/sumithemmadi/EasyOpenboxWM.git
-cd EasyOpenboxWM
-```
+  ```bash
+  cd ~/
+  git clone https://github.com/sumithemmadi/EasyOpenboxWM.git
+  cd EasyOpenboxWM
+  ```
 
 - First you need to backup your `.config` or `dotfiles` run  below command in the same directory (`EasyOpenboxWM`).
 - If you don't want any backup, you can ignore this part.
 
-```bash
- configs=($(ls -A $(pwd)/files))
-  for file in "${configs[@]}"; do
-   if [[ -f "$HOME/$file" || -d "$HOME/$file" ]]; then
-    { mv -u ${HOME}/${file}{,.old}; }  
-   fi
+  ```bash
+  configs=($(ls -A $(pwd)/files))
+    for file in "${configs[@]}"; do
+    if [[ -f "$HOME/$file" || -d "$HOME/$file" ]]; then
+      { mv -u ${HOME}/${file}{,.old}; }  
+    fi
   done
-```
+  ```
 
 - Run below command to install open box config files.
 
-```bash
- configs=($(ls -A $(pwd)/files))
- for _config in "${configs[@]}"; do
-   cp -rf $(pwd)/files/$_config $HOME;
- done
-```
+  ```bash
+  configs=($(ls -A $(pwd)/files))
+  for _config in "${configs[@]}"; do
+    cp -rf $(pwd)/files/$_config $HOME;
+  done
+  ```
 
 - And wait for some time untill installation is done.
 
 ## Initialize And Start Openbox
 
-
 Add openbox to the `.xinitrc` file:
 
-```bash
-echo “exec openbox-session” > ~/.xinitrc
-```
+  ```bash
+  echo “exec openbox-session” > ~/.xinitrc
+  ```
 
 Start Openbox Window Manager:
 
-```bash
-startx
-```
+  ```bash
+  startx
+  ```
 
 ### Keybindings
 
@@ -142,39 +143,39 @@ Installing Paru in Arch Linux is easy!
 
 1. First, install git and base-devel package group that includes tools needed for building (compiling and linking) packages from source.
 
-```bash
-sudo pacman -S --needed git base-devel
-```
+   ```bash
+   sudo pacman -S --needed git base-devel
+   ```
 
 2. Git clone Paru repository using command:
 
-```bash
-git clone https://aur.archlinux.org/paru-bin.git
-```
+   ```bash
+   git clone https://aur.archlinux.org/paru-bin.git
+   ```
 
-This command will download the contents of the Paru GitHub repository in a local directory named paru.
+   > This command will download the contents of the Paru GitHub repository in a local directory named paru-bin
 
-3. Change into the paru directory:
+3. Change into the paru-bin directory:
 
-```bash
-cd paru-bin
-```
+   ```bash
+   cd paru-bin
+   ```
 
 4. Finally, build and install Paru AUR helper in Arch Linux using the following command:
 
-```bash
-makepkg -sri
-```
+   ```bash
+   makepkg -sri
+   ```
 
-You can use `paru` for install packages from [AUR](https://aur.archlinux.org/paru.git)
+   > You can use `paru` for install packages from [AUR](https://aur.archlinux.org/paru.git)
 
 #### oh-my-zsh
 
 1. Setup zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh) framework.
 
-```bash
-paru -S oh-my-zsh-git oh-my-zsh-plugin-syntax-highlighting oh-my-zsh-plugin-autosuggestions
-```
+   ```bash
+   paru -S oh-my-zsh-git oh-my-zsh-plugin-syntax-highlighting oh-my-zsh-plugin-autosuggestions
+   ```
 
 #### Additional Information
 

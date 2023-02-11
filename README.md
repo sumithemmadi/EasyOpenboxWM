@@ -89,7 +89,6 @@ cd EasyOpenboxWM
 
 ## Initialize And Start Openbox
 
-This method is to initialize and start openbox without a Display Manager like lightdm
 
 Add openbox to the `.xinitrc` file:
 
@@ -143,7 +142,7 @@ Installing Paru in Arch Linux is easy!
 1. First, install git and base-devel package group that includes tools needed for building (compiling and linking) packages from source.
 
 ```bash
-sudo pacman -S --needed base-devel
+sudo pacman -S --needed git base-devel
 ```
 
 2. Git clone Paru repository using command:

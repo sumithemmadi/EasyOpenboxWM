@@ -19,7 +19,7 @@ bash setup.sh --install
 
 Installing Openbox
 
-On Debian/Ubuntu based distros, use the following command:
+On Arch based distros, use the following command:
 
 <!-- 
 ```bash

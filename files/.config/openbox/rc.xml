@@ -354,18 +354,18 @@
         <command>mpc next</command>
       </action>
     </keybind> 
-    <!-- Brightness Control
+    <!-- Brightness Control -->
     <keybind key="XF86MonBrightnessUp">
       <action name="Execute">
-        <command>backlight-up</command>
+        <command>brightnessctl set +6000</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessDown">
       <action name="Execute">
-        <command>backlight-down</command>
+        <command>brightnessctl set 6000-</command>
       </action>
-    </keybind> -->
-    <!-- Screenshot Keys
+    </keybind>
+    <!-- Screenshot Keys -->
     <keybind key="Print">
       <action name="Execute">
         <command>scrot 'Screenshot_%Y-%m-%d-%I-%M-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'</command>
@@ -380,7 +380,7 @@
       <action name="Execute">
         <command>scrot -u -b 'Screenshot_%Y-%m-%d-%I-%M-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'</command>
       </action>
-    </keybind> -->
+    </keybind> 
     <!-- Launch Applications -->
     <keybind key="W-e">
       <action name="Execute">
